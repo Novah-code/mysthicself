@@ -8,20 +8,10 @@ import ArchetypeDashboard from '@/components/ArchetypeDashboard';
 import MythologyNarrative from '@/components/MythologyNarrative';
 import ArchetypeEvolution from '@/components/ArchetypeEvolution';
 import ArchetypeDialogue from '@/components/ArchetypeDialogue';
-import DreamBackgroundGallery from '@/components/DreamBackgroundGallery';
 
 export default function Home() {
   const [dreams, setDreams] = useState<Dream[]>([]);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
-
-  // Your beautiful pastel dream paintings
-  const backgroundImages = [
-    '/dreams/1.jpg', // 기린
-    '/dreams/2.jpg', // 기차
-    '/dreams/3.jpg', // 기타
-    '/dreams/4.jpg', // 꽃사람
-    '/dreams/5.jpg', // 나침반
-  ];
 
   // Load dreams on mount
   useEffect(() => {
@@ -72,19 +62,22 @@ export default function Home() {
   return (
     <main className="min-h-screen relative overflow-hidden" style={{
       background: 'linear-gradient(180deg, #87CEEB 0%, #FFB6C1 40%, #98D8C8 100%)',
-      filter: 'saturate(0.9) contrast(1.1)',
     }}>
-      {/* Dream Background Gallery - 투명도 없이 완전히 보이게 */}
-      <DreamBackgroundGallery
-        images={backgroundImages}
-        opacity={1.0}
-        animationSpeed="slow"
-        noiseIntensity={0.2}
-      />
+      {/* Oil painting texture - 유화 질감 */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        backgroundImage: `
+          url("data:image/svg+xml,%3Csvg viewBox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='oil'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='6' seed='2'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='15'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23oil)' fill='white' opacity='0.4'/%3E%3C/svg%3E"),
+          url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='brush'%3E%3CfeTurbulence type='turbulence' baseFrequency='1.5' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23brush)' opacity='0.2'/%3E%3C/svg%3E")
+        `,
+        backgroundBlendMode: 'overlay, multiply',
+        opacity: 0.6,
+        mixBlendMode: 'overlay'
+      }}></div>
 
-      {/* Painting texture overlay */}
-      <div className="absolute inset-0 opacity-30 mix-blend-overlay pointer-events-none" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E")`,
+      {/* Canvas texture - 캔버스 질감 */}
+      <div className="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='canvas'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23canvas)' fill='white'/%3E%3C/svg%3E")`,
+        backgroundSize: '100px 100px'
       }}></div>
 
       {/* Soft painted clouds */}
