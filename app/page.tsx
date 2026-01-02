@@ -61,7 +61,16 @@ export default function Home() {
 
   return (
     <main className="min-h-screen relative overflow-hidden" style={{
-      background: 'linear-gradient(180deg, #87CEEB 0%, #FFB6C1 40%, #98D8C8 100%)',
+      background: `
+        radial-gradient(ellipse at 20% 30%, #F5C5B8 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, #C4B5D8 0%, transparent 45%),
+        radial-gradient(ellipse at 50% 60%, #B8D8E8 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 70%, #F5A3B8 0%, transparent 52%),
+        radial-gradient(ellipse at 60% 40%, #F5E5C8 0%, transparent 45%),
+        radial-gradient(ellipse at 40% 90%, #D8B8D8 0%, transparent 48%),
+        radial-gradient(ellipse at 15% 85%, #A8C8B8 0%, transparent 35%),
+        linear-gradient(135deg, #A8C8E1 0%, #F5C5B8 25%, #C4B5D8 50%, #F5E5C8 75%, #F5A3B8 100%)
+      `,
     }}>
       {/* Oil painting texture - 유화 질감 */}
       <div className="absolute inset-0 pointer-events-none" style={{
