@@ -60,37 +60,32 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-indigo-950 via-purple-950 to-slate-900 relative overflow-hidden">
-      {/* Mystical background effects */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0ic3RhcnMiIHg9IjAiIHk9IjAiIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48Y2lyY2xlIGN4PSIxMCIgY3k9IjEwIiByPSIxIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMykiLz48Y2lyY2xlIGN4PSI4MCIgY3k9IjUwIiByPSIxLjUiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4yKSIvPjxjaXJjbGUgY3g9IjE1MCIgY3k9IjMwIiByPSIwLjgiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC40KSIvPjxjaXJjbGUgY3g9IjQwIiBjeT0iMTQwIiByPSIxLjIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4zKSIvPjxjaXJjbGUgY3g9IjE4MCIgY3k9IjE3MCIgcj0iMC45IiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMykiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjc3RhcnMpIi8+PC9zdmc+')] opacity-40"></div>
+    <main className="min-h-screen bg-gradient-to-br from-blue-400 via-pink-300 to-green-300 relative overflow-hidden">
+      {/* Animated dreamlike background */}
+      <div className="absolute inset-0 opacity-40 blur-3xl">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-0 left-20 w-96 h-96 bg-green-400 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
+      </div>
+
+      {/* Floating particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 text-white/30 text-2xl animate-float">✦</div>
+        <div className="absolute top-1/3 right-1/4 text-white/20 text-xl animate-float animation-delay-2000">❋</div>
+        <div className="absolute bottom-1/4 left-1/3 text-white/25 text-3xl animate-float animation-delay-4000">⟡</div>
+        <div className="absolute top-2/3 right-1/3 text-white/30 text-xl animate-float animation-delay-1000">✧</div>
+      </div>
 
       <div className="container mx-auto px-4 py-12 max-w-6xl relative z-10">
         {/* Header */}
-        <header className="text-center mb-16">
-          <div className="inline-block">
-            <div className="relative">
-              {/* Decorative top ornament */}
-              <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-amber-400/60 text-2xl">✦</div>
+        <header className="text-center mb-16 animate-fade-in">
+          <h1 className="text-7xl font-light bg-gradient-to-r from-white via-pink-100 to-blue-100 bg-clip-text text-transparent mb-6 tracking-tight filter drop-shadow-[0_2px_20px_rgba(255,255,255,0.5)] animate-glow">
+            MythicSelf
+          </h1>
 
-              <h1 className="text-6xl font-serif bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-300 bg-clip-text text-transparent mb-2 tracking-wide filter drop-shadow-[0_0_30px_rgba(251,191,36,0.3)]">
-                MythicSelf
-              </h1>
-
-              {/* Decorative bottom ornament */}
-              <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-amber-400/60 text-xl">⟡</div>
-            </div>
-          </div>
-
-          <p className="text-lg text-amber-100/70 mt-8 font-light tracking-widest">
+          <p className="text-xl text-white/90 font-light tracking-wide">
             Discover your personal mythology through dream archetypes
           </p>
-
-          {/* Decorative line */}
-          <div className="flex items-center justify-center gap-4 mt-6">
-            <div className="h-px w-20 bg-gradient-to-r from-transparent to-amber-500/30"></div>
-            <span className="text-amber-400/50 text-xs">✧</span>
-            <div className="h-px w-20 bg-gradient-to-l from-transparent to-amber-500/30"></div>
-          </div>
         </header>
 
         {/* Dream Input */}
@@ -122,10 +117,10 @@ export default function Home() {
 
         {/* Empty State */}
         {dreams.length === 0 && !isAnalyzing && (
-          <div className="text-center mt-16 bg-slate-800/30 backdrop-blur-sm border border-amber-500/20 rounded-2xl p-12">
-            <div className="text-6xl mb-4 opacity-60">✨</div>
-            <p className="text-lg text-amber-100/60 font-light">No dreams recorded yet.</p>
-            <p className="mt-2 text-amber-100/40">Enter your first dream above to discover your archetypes.</p>
+          <div className="text-center mt-16 bg-white/60 backdrop-blur-xl border border-white/40 rounded-[2rem] p-12 animate-fade-in">
+            <div className="text-6xl mb-4 animate-float">✨</div>
+            <p className="text-lg text-gray-700 font-light">No dreams recorded yet</p>
+            <p className="mt-2 text-gray-500">Enter your first dream above to discover your archetypes</p>
           </div>
         )}
       </div>

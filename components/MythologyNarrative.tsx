@@ -49,44 +49,34 @@ export default function MythologyNarrative({ dreams }: MythologyNarrativeProps) 
 
   if (dreams.length < 2) {
     return (
-      <div className="bg-slate-800/40 backdrop-blur-md border-2 border-amber-500/30 rounded-3xl shadow-[0_0_50px_rgba(251,191,36,0.15)] p-12 text-center relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-6 left-1/2 transform -translate-x-1/2 text-amber-400/30 text-xl">⟡</div>
-
-        <div className="text-6xl mb-6 opacity-60">📖</div>
-        <h2 className="text-2xl font-serif text-amber-200 mb-4 tracking-wide">
+      <div className="bg-white/70 backdrop-blur-xl border border-white/40 rounded-[2rem] p-12 text-center animate-fade-in">
+        <div className="text-6xl mb-6 animate-float">📖</div>
+        <h2 className="text-2xl font-light text-gray-800 mb-4">
           Your Personal Mythology
         </h2>
-        <p className="text-amber-100/50 font-light">
+        <p className="text-gray-600 font-light">
           Record at least 2 dreams to unlock your personal mythology narrative
         </p>
-
-        {/* Decorative bottom */}
-        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-amber-400/30 text-xl">⟡</div>
       </div>
     );
   }
 
   return (
-    <div className="bg-slate-800/40 backdrop-blur-md border-2 border-amber-500/30 rounded-3xl shadow-[0_0_50px_rgba(251,191,36,0.15)] p-8 relative overflow-hidden">
-      {/* Decorative corner ornaments */}
-      <div className="absolute top-4 left-4 text-amber-500/20 text-2xl">❋</div>
-      <div className="absolute top-4 right-4 text-amber-500/20 text-2xl">❋</div>
-
+    <div className="bg-white/70 backdrop-blur-xl border border-white/40 rounded-[2rem] p-8 animate-fade-in">
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h2 className="text-2xl font-serif text-amber-200 tracking-wide">
+          <h2 className="text-2xl font-light text-gray-800">
             📖 Your Personal Mythology
           </h2>
-          <p className="text-amber-100/50 text-sm mt-2 font-light">
-            AI-woven narrative connecting your {dreams.length} dreams into one mythological journey
+          <p className="text-gray-600 text-sm mt-2 font-light">
+            AI-woven narrative connecting your {dreams.length} dreams
           </p>
         </div>
         {!mythology && (
           <button
             onClick={generateMythology}
             disabled={isGenerating}
-            className="bg-gradient-to-r from-amber-600 to-yellow-600 text-slate-900 px-8 py-3 rounded-full font-semibold hover:shadow-[0_0_30px_rgba(251,191,36,0.4)] transition-all disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap border border-amber-400/50"
+            className="bg-gradient-to-r from-purple-400 to-pink-400 text-white px-8 py-3 rounded-full font-light hover:shadow-lg hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
           >
             {isGenerating ? (
               <span className="flex items-center gap-2">
@@ -94,74 +84,72 @@ export default function MythologyNarrative({ dreams }: MythologyNarrativeProps) 
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
-                Weaving your myth...
+                Creating...
               </span>
             ) : (
-              '✦ Weave My Mythology ✦'
+              'Create Mythology'
             )}
           </button>
         )}
       </div>
 
       {mythology ? (
-        <div className="space-y-8">
+        <div className="space-y-6">
           {/* Current Phase */}
-          <div className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-2xl p-6 border border-amber-500/30 backdrop-blur-sm">
-            <div className="flex items-center gap-3 mb-3">
+          <div className="bg-gradient-to-r from-purple-100/50 to-pink-100/50 rounded-3xl p-6 border border-pink-200/50">
+            <div className="flex items-center gap-3">
               <span className="text-3xl">🌟</span>
               <div>
-                <h3 className="text-lg font-serif text-amber-200">
+                <h3 className="text-lg font-light text-gray-800">
                   Current Phase: {mythology.currentPhase}
                 </h3>
-                <p className="text-amber-100/70 text-sm font-light mt-1">{mythology.phaseDescription}</p>
+                <p className="text-gray-600 text-sm font-light mt-1">{mythology.phaseDescription}</p>
               </div>
             </div>
           </div>
 
           {/* Main Narrative */}
-          <div className="bg-slate-900/30 rounded-2xl p-8 border border-amber-500/20">
-            <h3 className="text-xl font-serif mb-4 text-amber-200 flex items-center justify-center gap-2">
-              <span className="text-amber-400/50">⟡</span>
+          <div className="bg-white/50 rounded-3xl p-8 border border-gray-200/50">
+            <h3 className="text-xl font-light mb-4 text-gray-800 text-center">
               Your Journey
-              <span className="text-amber-400/50">⟡</span>
             </h3>
-            <div className="text-amber-50/80 leading-relaxed whitespace-pre-wrap font-light text-justify">
+            <div className="text-gray-700 leading-relaxed whitespace-pre-wrap font-light">
               {mythology.narrative}
             </div>
           </div>
 
           {/* Archetype Evolution */}
-          <div className="bg-blue-900/20 rounded-2xl p-6 border border-cyan-500/30">
-            <h3 className="text-lg font-serif mb-3 text-cyan-200 flex items-center gap-2">
+          <div className="bg-blue-100/30 rounded-3xl p-6 border border-blue-200/50">
+            <h3 className="text-lg font-light mb-3 text-gray-800 flex items-center gap-2">
               <span>🔄</span>
               Archetype Evolution
             </h3>
-            <p className="text-cyan-100/70 font-light">{mythology.archetypeEvolution}</p>
+            <p className="text-gray-700 font-light">{mythology.archetypeEvolution}</p>
           </div>
 
           {/* Insights */}
-          <div className="bg-slate-900/30 rounded-2xl p-6 border border-amber-500/20">
-            <h3 className="text-lg font-serif mb-4 text-amber-200 flex items-center gap-2">
+          <div className="bg-white/50 rounded-3xl p-6 border border-gray-200/50">
+            <h3 className="text-lg font-light mb-4 text-gray-800 flex items-center gap-2">
               <span>💡</span>
               Key Insights
             </h3>
             <ul className="space-y-3">
               {mythology.insights.map((insight, index) => (
                 <li key={index} className="flex gap-3">
-                  <span className="text-amber-400 flex-shrink-0">✦</span>
-                  <span className="text-amber-50/70 font-light">{insight}</span>
+                  <span className="text-pink-400 flex-shrink-0">•</span>
+                  <span className="text-gray-700 font-light">{insight}</span>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Next Steps */}
-          <div className="bg-emerald-900/20 rounded-2xl p-6 border border-emerald-500/30">
-            <h3 className="text-lg font-serif mb-3 text-emerald-200 flex items-center gap-2">
+          <div className="bg-green-100/30 rounded-3xl p-6 border border-green-200/50">
+            <h3 className="text-lg font-light mb-3 text-gray-800 flex items-center gap-2">
               <span>🔮</span>
               What Comes Next
             </h3>
-            <p className="text-emerald-100/70 font-light">{mythology.nextSteps}</p>
+            <p className="text-gray-700 font-light">{mythology.nextSteps}</p>
           </div>
 
           {/* Regenerate Button */}
@@ -169,9 +157,9 @@ export default function MythologyNarrative({ dreams }: MythologyNarrativeProps) 
             <button
               onClick={generateMythology}
               disabled={isGenerating}
-              className="text-amber-300 hover:text-amber-100 font-light tracking-wide underline decoration-amber-500/50 hover:decoration-amber-300 transition-all"
+              className="text-gray-600 hover:text-gray-800 font-light underline decoration-gray-400 hover:decoration-gray-600 transition-all"
             >
-              ⟡ Reweave Mythology ⟡
+              Regenerate Mythology
             </button>
           </div>
         </div>
