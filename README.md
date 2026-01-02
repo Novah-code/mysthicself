@@ -1,36 +1,130 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MythicSelf
 
-## Getting Started
+**Discover your personal mythology through dream archetypes powered by Gemini 3 Flash**
 
-First, run the development server:
+## 🌟 Overview
+
+MythicSelf is an AI-powered dream analysis application that helps you uncover recurring archetypal patterns in your dreams. By leveraging Google's Gemini 3 Flash, it identifies five core Jungian archetypes in your dreams and builds a personal mythological profile over time.
+
+## 🎭 The Five Archetypes
+
+- **🌑 The Shadow**: Hidden fears, rejected parts, unconscious patterns
+- **⚔️ The Hero**: Courage, challenges, growth, transformation
+- **🧙 The Wise Guide**: Inner wisdom, guidance, insight, mentorship
+- **💝 The Lover**: Connection, passion, intimacy, relationships
+- **🌟 The Child**: Innocence, playfulness, wonder, new beginnings
+
+## ✨ Key Features
+
+### Powered by Gemini 3 Flash
+- **Enhanced Reasoning**: Deep psychological analysis of dream content
+- **Fast Response**: Low-latency dream interpretation
+- **Contextual Understanding**: Recognizes complex dream narratives and symbolism
+
+### Core Functionality
+- 📝 Record dreams with simple text input
+- 🤖 AI-powered archetype extraction (0-100% scores)
+- 📊 Visual dashboard of your mythological profile
+- 💾 Client-side storage (no login required)
+- 📈 Track archetype patterns across multiple dreams
+
+## 🚀 How It Works
+
+1. **Record Your Dream**: Enter a dream description (minimum 10 characters)
+2. **AI Analysis**: Gemini 3 Flash analyzes the dream and scores each archetype
+3. **View Results**: See which archetypes are most present in your dream
+4. **Track Patterns**: Build your personal mythology over time
+
+## 🛠️ Technical Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **AI Model**: Google Gemini 3 Flash
+- **Styling**: Tailwind CSS
+- **Storage**: Browser localStorage
+- **Deployment**: Vercel
+
+## 📦 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- Gemini API key ([Get one here](https://ai.google.dev/))
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/Novah-code/mysthicself.git
+
+# Install dependencies
+cd mysthicself
+npm install
+
+# Set up environment variables
+cp .env.local.example .env.local
+# Add your GEMINI_API_KEY to .env.local
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to start recording dreams.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔑 Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` file with:
 
-## Learn More
+```
+GEMINI_API_KEY=your_gemini_api_key_here
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🎯 Gemini 3 Integration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+MythicSelf leverages Gemini 3 Flash's capabilities:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Advanced Reasoning**: Understands nuanced psychological concepts
+- **Pattern Recognition**: Identifies archetypal themes across dream narratives
+- **Structured Output**: Generates consistent JSON responses for archetype scores
+- **Natural Language Understanding**: Processes both detailed dreams and keyword-based input
 
-## Deploy on Vercel
+### Example Prompt Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```typescript
+const prompt = `Analyze this dream and score archetype presence (0-100):
+Dream: "${dreamContent}"
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Archetypes:
+- Shadow: Hidden fears, rejected parts
+- Hero: Courage, challenges, growth
+- Wise Guide: Inner wisdom, guidance
+- Lover: Connection, passion, intimacy
+- Child: Innocence, playfulness, wonder
+
+Return JSON with scores and reasoning.`;
+```
+
+## 🎨 Design Philosophy
+
+- **No Login Required**: Start exploring immediately with localStorage
+- **Privacy First**: All data stays in your browser
+- **Beautiful UI**: Gradient-rich, modern design
+- **Mobile Friendly**: Responsive across all devices
+
+## 🧠 Inspired by Jungian Psychology
+
+Based on Carl Jung's archetypal theory and depth psychology. The app translates complex psychological concepts into accessible language, helping users discover patterns in their unconscious mind.
+
+**Disclaimer**: This app is for educational and reflective purposes. It is not a substitute for professional psychological counseling.
+
+## 📝 License
+
+MIT License - feel free to use and modify for your own projects.
+
+## 🙏 Acknowledgments
+
+- Built for the **Gemini 3 Global Hackathon**
+- Powered by **Google Gemini 3 Flash**
+- Inspired by **Carl Jung's archetypal psychology**
+
+---
+
+**Made with ❤️ for dreamers and seekers**
