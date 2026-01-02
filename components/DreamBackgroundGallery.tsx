@@ -119,9 +119,10 @@ export default function DreamBackgroundGallery({
           display: grid;
           grid-template-columns: repeat(4, 1fr);
           grid-template-rows: repeat(3, 1fr);
-          gap: 20px;
+          gap: 0px;
           opacity: ${opacity};
-          filter: blur(2px);
+          filter: blur(8px);
+          mix-blend-mode: soft-light;
         }
 
         .dream-background-item {
@@ -129,7 +130,7 @@ export default function DreamBackgroundGallery({
           width: 100%;
           height: 100%;
           overflow: hidden;
-          border-radius: 20px;
+          border-radius: 0px;
         }
 
         .dream-background-item img {
