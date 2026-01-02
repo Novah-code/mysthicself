@@ -50,7 +50,6 @@ export default function MythologyNarrative({ dreams }: MythologyNarrativeProps) 
   if (dreams.length < 2) {
     return (
       <div className="bg-white/70 backdrop-blur-xl border border-white/40 rounded-[2rem] p-12 text-center animate-fade-in">
-        <div className="text-6xl mb-6 animate-float">📖</div>
         <h2 className="text-2xl font-light text-gray-800 mb-4">
           Your Personal Mythology
         </h2>
@@ -66,7 +65,7 @@ export default function MythologyNarrative({ dreams }: MythologyNarrativeProps) 
       <div className="flex items-center justify-between mb-8">
         <div>
           <h2 className="text-2xl font-light text-gray-800">
-            📖 Your Personal Mythology
+            Your Personal Mythology
           </h2>
           <p className="text-gray-600 text-sm mt-2 font-light">
             AI-woven narrative connecting your {dreams.length} dreams
@@ -97,15 +96,10 @@ export default function MythologyNarrative({ dreams }: MythologyNarrativeProps) 
         <div className="space-y-6">
           {/* Current Phase */}
           <div className="bg-gradient-to-r from-purple-100/50 to-pink-100/50 rounded-3xl p-6 border border-pink-200/50">
-            <div className="flex items-center gap-3">
-              <span className="text-3xl">🌟</span>
-              <div>
-                <h3 className="text-lg font-light text-gray-800">
-                  Current Phase: {mythology.currentPhase}
-                </h3>
-                <p className="text-gray-600 text-sm font-light mt-1">{mythology.phaseDescription}</p>
-              </div>
-            </div>
+            <h3 className="text-lg font-light text-gray-800">
+              Current Phase: {mythology.currentPhase}
+            </h3>
+            <p className="text-gray-600 text-sm font-light mt-1">{mythology.phaseDescription}</p>
           </div>
 
           {/* Main Narrative */}
@@ -120,8 +114,7 @@ export default function MythologyNarrative({ dreams }: MythologyNarrativeProps) 
 
           {/* Archetype Evolution */}
           <div className="bg-blue-100/30 rounded-3xl p-6 border border-blue-200/50">
-            <h3 className="text-lg font-light mb-3 text-gray-800 flex items-center gap-2">
-              <span>🔄</span>
+            <h3 className="text-lg font-light mb-3 text-gray-800">
               Archetype Evolution
             </h3>
             <p className="text-gray-700 font-light">{mythology.archetypeEvolution}</p>
@@ -129,8 +122,7 @@ export default function MythologyNarrative({ dreams }: MythologyNarrativeProps) 
 
           {/* Insights */}
           <div className="bg-white/50 rounded-3xl p-6 border border-gray-200/50">
-            <h3 className="text-lg font-light mb-4 text-gray-800 flex items-center gap-2">
-              <span>💡</span>
+            <h3 className="text-lg font-light mb-4 text-gray-800">
               Key Insights
             </h3>
             <ul className="space-y-3">
@@ -145,8 +137,7 @@ export default function MythologyNarrative({ dreams }: MythologyNarrativeProps) 
 
           {/* Next Steps */}
           <div className="bg-green-100/30 rounded-3xl p-6 border border-green-200/50">
-            <h3 className="text-lg font-light mb-3 text-gray-800 flex items-center gap-2">
-              <span>🔮</span>
+            <h3 className="text-lg font-light mb-3 text-gray-800">
               What Comes Next
             </h3>
             <p className="text-gray-700 font-light">{mythology.nextSteps}</p>
