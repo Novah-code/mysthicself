@@ -14,13 +14,13 @@ export default function Home() {
   const [dreams, setDreams] = useState<Dream[]>([]);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
 
-  // Beautiful pastel dream images
+  // Your beautiful pastel dream paintings
   const backgroundImages = [
-    'https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=800&q=80',
-    'https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=800&q=80',
-    'https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?w=800&q=80',
-    'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&q=80',
-    'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&q=80',
+    '/dreams/1.jpg', // 기린
+    '/dreams/2.jpg', // 기차
+    '/dreams/3.jpg', // 기타
+    '/dreams/4.jpg', // 꽃사람
+    '/dreams/5.jpg', // 나침반
   ];
 
   // Load dreams on mount
