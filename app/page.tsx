@@ -8,10 +8,20 @@ import ArchetypeDashboard from '@/components/ArchetypeDashboard';
 import MythologyNarrative from '@/components/MythologyNarrative';
 import ArchetypeEvolution from '@/components/ArchetypeEvolution';
 import ArchetypeDialogue from '@/components/ArchetypeDialogue';
+import DreamBackgroundGallery from '@/components/DreamBackgroundGallery';
 
 export default function Home() {
   const [dreams, setDreams] = useState<Dream[]>([]);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
+
+  // Beautiful pastel dream images
+  const backgroundImages = [
+    'https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=800&q=80',
+    'https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=800&q=80',
+    'https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?w=800&q=80',
+    'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&q=80',
+    'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&q=80',
+  ];
 
   // Load dreams on mount
   useEffect(() => {
@@ -64,6 +74,14 @@ export default function Home() {
       background: 'linear-gradient(180deg, #87CEEB 0%, #FFB6C1 40%, #98D8C8 100%)',
       filter: 'saturate(0.9) contrast(1.1)',
     }}>
+      {/* Dream Background Gallery - 이미지가 보이도록 투명도 높임 */}
+      <DreamBackgroundGallery
+        images={backgroundImages}
+        opacity={0.25}
+        animationSpeed="slow"
+        noiseIntensity={0.15}
+      />
+
       {/* Painting texture overlay */}
       <div className="absolute inset-0 opacity-30 mix-blend-overlay pointer-events-none" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E")`,
