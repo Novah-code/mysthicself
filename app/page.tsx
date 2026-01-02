@@ -74,10 +74,10 @@ export default function Home() {
       background: 'linear-gradient(180deg, #87CEEB 0%, #FFB6C1 40%, #98D8C8 100%)',
       filter: 'saturate(0.9) contrast(1.1)',
     }}>
-      {/* Dream Background Gallery - 유화처럼 블렌딩 */}
+      {/* Dream Background Gallery - 투명도 없이 완전히 보이게 */}
       <DreamBackgroundGallery
         images={backgroundImages}
-        opacity={0.6}
+        opacity={1.0}
         animationSpeed="slow"
         noiseIntensity={0.2}
       />
