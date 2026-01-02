@@ -19,11 +19,15 @@ export default function DreamInput({ onSubmit, isAnalyzing }: DreamInputProps) {
   };
 
   return (
-    <div className="bg-white/80 backdrop-blur-xl border border-white/40 rounded-[2rem] shadow-[0_8px_32px_rgba(0,0,0,0.1)] p-8 mb-12 relative overflow-hidden animate-fade-in">
-      {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-pink-100/20 via-transparent to-blue-100/20 pointer-events-none"></div>
+    <div className="bg-white/70 backdrop-blur-md border-2 border-white/50 rounded-3xl p-8 mb-12 relative overflow-hidden animate-fade-in" style={{
+      boxShadow: '0 8px 32px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.5)',
+    }}>
+      {/* Painted texture overlay */}
+      <div className="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E")`,
+      }}></div>
 
-      <h2 className="text-2xl font-light text-gray-800 mb-6 text-center relative z-10">
+      <h2 className="text-2xl font-serif text-gray-800 mb-6 text-center relative z-10">
         Record Your Dream
       </h2>
       <form onSubmit={handleSubmit} className="relative z-10">

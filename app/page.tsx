@@ -60,37 +60,44 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-400 via-pink-300 to-green-300 relative overflow-hidden">
-      {/* Animated dreamlike background */}
-      <div className="absolute inset-0 opacity-40 blur-3xl">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-0 left-20 w-96 h-96 bg-green-400 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
+    <main className="min-h-screen relative overflow-hidden" style={{
+      background: 'linear-gradient(180deg, #87CEEB 0%, #FFB6C1 40%, #98D8C8 100%)',
+      filter: 'saturate(0.9) contrast(1.1)',
+    }}>
+      {/* Painting texture overlay */}
+      <div className="absolute inset-0 opacity-30 mix-blend-overlay pointer-events-none" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E")`,
+      }}></div>
+
+      {/* Soft painted clouds */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-10 w-64 h-32 bg-white/20 rounded-full blur-3xl animate-drift"></div>
+        <div className="absolute top-40 right-20 w-80 h-40 bg-white/15 rounded-full blur-3xl animate-drift animation-delay-2000"></div>
+        <div className="absolute bottom-32 left-1/4 w-96 h-48 bg-white/10 rounded-full blur-3xl animate-drift animation-delay-4000"></div>
       </div>
 
-      {/* Subtle particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 bg-white rounded-full animate-twinkle"
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-            }}
-          />
-        ))}
+      {/* Brushstroke-like blobs */}
+      <div className="absolute inset-0 opacity-20 mix-blend-multiply">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-pink-400 rounded-full blur-3xl animate-blob"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-300 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-0 left-20 w-96 h-96 bg-green-300 rounded-full blur-3xl animate-blob animation-delay-4000"></div>
+        <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-yellow-200 rounded-full blur-3xl animate-blob animation-delay-1000"></div>
       </div>
 
       <div className="container mx-auto px-4 py-12 max-w-6xl relative z-10">
         {/* Header */}
         <header className="text-center mb-16 animate-fade-in">
-          <h1 className="text-7xl font-light bg-gradient-to-r from-white via-pink-100 to-blue-100 bg-clip-text text-transparent mb-6 tracking-tight filter drop-shadow-[0_2px_20px_rgba(255,255,255,0.5)] animate-glow">
+          <h1 className="text-7xl font-serif tracking-tight mb-6" style={{
+            color: '#fff',
+            textShadow: '0 4px 20px rgba(0,0,0,0.2), 0 2px 4px rgba(255,255,255,0.3)',
+            filter: 'drop-shadow(0 0 40px rgba(255,255,255,0.4))',
+          }}>
             MythicSelf
           </h1>
 
-          <p className="text-xl text-white/90 font-light tracking-wide">
+          <p className="text-xl text-white font-light tracking-wide" style={{
+            textShadow: '0 2px 10px rgba(0,0,0,0.2)',
+          }}>
             Discover your personal mythology through dream archetypes
           </p>
         </header>
