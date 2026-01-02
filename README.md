@@ -16,14 +16,38 @@ MythicSelf is an AI-powered dream analysis application that helps you uncover re
 
 ## ✨ Key Features
 
-### Powered by Gemini 3 Flash
-- **Enhanced Reasoning**: Deep psychological analysis of dream content
-- **Fast Response**: Low-latency dream interpretation
-- **Contextual Understanding**: Recognizes complex dream narratives and symbolism
+### 🌟 Three Unique Gemini 3 Features
+
+#### 1. **Personal Mythology Narrative** - Hero's Journey AI Storytelling
+Gemini 3 analyzes multiple dreams chronologically and weaves them into a compelling mythological narrative using Joseph Campbell's Hero's Journey framework. It identifies which stage you're in (e.g., "The Ordeal", "Meeting the Mentor"), traces archetype evolution, and predicts what comes next in your psychological journey.
+
+**Why this showcases Gemini 3**:
+- Long context understanding across multiple dreams
+- Enhanced reasoning to map psychological patterns to mythological stages
+- Creative storytelling with psychological depth
+- Predictive insights about future development
+
+#### 2. **Archetype Evolution Timeline** - Visual Journey Tracking
+An interactive timeline that displays how your dominant archetypes shift over time. See your psychological transformation visualized with color-coded transitions, frequency statistics, and AI-generated insights about your journey.
+
+**Why this showcases Gemini 3**:
+- Pattern recognition across dream sequences
+- Temporal analysis of archetypal shifts
+- Statistical reasoning about personality evolution
+- Visual data synthesis
+
+#### 3. **Interactive Archetype Dialogue** - Conversation with Your Psyche
+Talk directly with your archetypes in a conversational AI experience. Each archetype speaks with its unique voice, personality, and wisdom. Ask your Shadow about hidden fears, consult your Wise Guide for insight, or play with your Child archetype.
+
+**Why this showcases Gemini 3**:
+- Advanced role-playing with psychological accuracy
+- Conversational context awareness
+- Nuanced personality simulation for each archetype
+- Therapeutically insightful responses
 
 ### Core Functionality
 - 📝 Record dreams with simple text input
-- 🤖 AI-powered archetype extraction (0-100% scores)
+- 🤖 AI-powered archetype extraction (0-100% scores with reasoning)
 - 📊 Visual dashboard of your mythological profile
 - 💾 Client-side storage (no login required)
 - 📈 Track archetype patterns across multiple dreams
