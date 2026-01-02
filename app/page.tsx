@@ -72,21 +72,44 @@ export default function Home() {
         linear-gradient(135deg, #A8C8E1 0%, #F5C5B8 25%, #C4B5D8 50%, #F5E5C8 75%, #F5A3B8 100%)
       `,
     }}>
-      {/* Oil painting texture - 유화 질감 */}
+      {/* Heavy oil painting texture layers - 진한 유화 질감 */}
+
+      {/* Layer 1: Thick brush strokes with displacement */}
       <div className="absolute inset-0 pointer-events-none" style={{
-        backgroundImage: `
-          url("data:image/svg+xml,%3Csvg viewBox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='oil'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='6' seed='2'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='15'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23oil)' fill='white' opacity='0.4'/%3E%3C/svg%3E"),
-          url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='brush'%3E%3CfeTurbulence type='turbulence' baseFrequency='1.5' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23brush)' opacity='0.2'/%3E%3C/svg%3E")
-        `,
-        backgroundBlendMode: 'overlay, multiply',
-        opacity: 0.6,
-        mixBlendMode: 'overlay'
+        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 1000 1000' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='oil1'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='8' seed='1'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='40' xChannelSelector='R' yChannelSelector='G'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23oil1)' fill='%23F5C5B8' opacity='0.7'/%3E%3C/svg%3E")`,
+        backgroundSize: '100% 100%',
+        mixBlendMode: 'soft-light',
+        opacity: 0.8
       }}></div>
 
-      {/* Canvas texture - 캔버스 질감 */}
-      <div className="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='canvas'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23canvas)' fill='white'/%3E%3C/svg%3E")`,
-        backgroundSize: '100px 100px'
+      {/* Layer 2: Directional brush strokes */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='brush1'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.6 0.3' numOctaves='6'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='25'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23brush1)' fill='%23C4B5D8' opacity='0.6'/%3E%3C/svg%3E")`,
+        backgroundSize: '100% 100%',
+        mixBlendMode: 'multiply',
+        opacity: 0.7
+      }}></div>
+
+      {/* Layer 3: Cross-hatching texture */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='brush2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.3 0.8' numOctaves='7'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='30'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23brush2)' fill='%23B8D8E8' opacity='0.5'/%3E%3C/svg%3E")`,
+        backgroundSize: '100% 100%',
+        mixBlendMode: 'overlay',
+        opacity: 0.6
+      }}></div>
+
+      {/* Layer 4: Impasto effect (thick paint lumps) */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='impasto'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='5'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='8'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23impasto)' fill='white' opacity='0.3'/%3E%3C/svg%3E")`,
+        backgroundSize: '200px 200px',
+        mixBlendMode: 'overlay',
+        opacity: 0.9
+      }}></div>
+
+      {/* Canvas weave texture - 캔버스 직조 질감 */}
+      <div className="absolute inset-0 opacity-30 mix-blend-multiply pointer-events-none" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='canvas'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23canvas)' fill='white'/%3E%3C/svg%3E")`,
+        backgroundSize: '80px 80px'
       }}></div>
 
       {/* Soft painted clouds */}
