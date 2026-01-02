@@ -5,6 +5,7 @@ import { Dream, ArchetypeScore } from '@/types/archetypes';
 import { dreamStorage } from '@/lib/storage';
 import DreamInput from '@/components/DreamInput';
 import ArchetypeDashboard from '@/components/ArchetypeDashboard';
+import MythologyNarrative from '@/components/MythologyNarrative';
 
 export default function Home() {
   const [dreams, setDreams] = useState<Dream[]>([]);
@@ -71,6 +72,13 @@ export default function Home() {
 
         {/* Dream Input */}
         <DreamInput onSubmit={handleDreamSubmit} isAnalyzing={isAnalyzing} />
+
+        {/* Personal Mythology Narrative - UNIQUE FEATURE! */}
+        {dreams.length > 0 && (
+          <div className="mb-12">
+            <MythologyNarrative dreams={dreams} />
+          </div>
+        )}
 
         {/* Archetype Dashboard */}
         {dreams.length > 0 && (
