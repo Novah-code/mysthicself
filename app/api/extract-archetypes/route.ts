@@ -25,15 +25,15 @@ export async function POST(request: NextRequest) {
       `- ${arch.name} (${arch.emoji}): ${arch.description}. Keywords: ${arch.keywords.join(', ')}`
     ).join('\n');
 
-    const prompt = `You are an expert in Jungian psychology and dream analysis. Analyze the following dream and score how strongly each archetype is present.
+    const prompt = `You are an expert in Jungian psychology and mythological narratives. Review the following dreams and score how strongly each archetype is present.
 
-DREAM:
+DREAMS:
 "${dreamContent}"
 
-ARCHETYPES TO ANALYZE:
+ARCHETYPES TO CONSIDER:
 ${archetypeList}
 
-For each archetype, provide a score from 0-100 indicating how strongly that archetype is present in this dream, along with brief reasoning.
+For each archetype, provide a score from 0-100 indicating how strongly that archetype is present in these dreams, along with brief reasoning.
 
 Respond ONLY with a JSON array in this exact format:
 [
@@ -53,7 +53,7 @@ Respond ONLY with a JSON array in this exact format:
 Make sure to include ALL 5 archetypes (shadow, hero, wise_guide, lover, child) in your response.`;
 
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.0-flash:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
       {
         method: 'POST',
         headers: {
@@ -73,7 +73,7 @@ Make sure to include ALL 5 archetypes (shadow, hero, wise_guide, lover, child) i
       const errorText = await response.text();
       console.error('Gemini API error:', response.status, errorText);
       return NextResponse.json(
-        { error: 'Failed to analyze dream' },
+        { error: 'Failed to create mythology from dreams' },
         { status: response.status }
       );
     }

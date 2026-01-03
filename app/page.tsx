@@ -32,7 +32,7 @@ export default function Home() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to analyze dream');
+        throw new Error('Failed to create mythology');
       }
 
       const { archetypeScores } = await response.json();
@@ -51,8 +51,8 @@ export default function Home() {
       // Update state
       setDreams([newDream, ...dreams]);
     } catch (error) {
-      console.error('Error analyzing dream:', error);
-      alert('Failed to analyze dream. Please try again.');
+      console.error('Error creating mythology:', error);
+      alert('Failed to create your mythology. Please try again.');
     } finally {
       setIsAnalyzing(false);
     }
