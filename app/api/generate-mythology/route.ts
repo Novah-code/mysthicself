@@ -85,7 +85,7 @@ Respond ONLY with a JSON object in this format:
 Make the narrative personal, compelling, and psychologically insightful. Use specific details from their dreams.`;
 
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.0-flash:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash:generateContent?key=${apiKey}`,
       {
         method: 'POST',
         headers: {

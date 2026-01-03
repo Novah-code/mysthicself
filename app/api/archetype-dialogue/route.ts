@@ -83,7 +83,7 @@ USER'S MESSAGE: "${userMessage}"${conversationContext}
 Respond as ${archetype.name} speaking directly to the user. Be authentic, insightful, and true to your archetypal nature.`;
 
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.0-flash:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash:generateContent?key=${apiKey}`,
       {
         method: 'POST',
         headers: {
