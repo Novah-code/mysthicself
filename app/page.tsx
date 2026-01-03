@@ -60,59 +60,12 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen relative overflow-hidden">
-      {/* Base: Blended dream images as background */}
-      <div className="absolute inset-0" style={{
-        backgroundImage: `url('/dreams/1.jpg')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        filter: 'blur(60px) brightness(1.1)',
-        opacity: 0.5
-      }}></div>
-
-      <div className="absolute inset-0" style={{
-        backgroundImage: `url('/dreams/2.jpg')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        filter: 'blur(60px)',
-        mixBlendMode: 'lighten',
-        opacity: 0.4
-      }}></div>
-
-      <div className="absolute inset-0" style={{
-        backgroundImage: `url('/dreams/3.jpg')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        filter: 'blur(60px)',
-        mixBlendMode: 'screen',
-        opacity: 0.35
-      }}></div>
-
-      <div className="absolute inset-0" style={{
-        backgroundImage: `url('/dreams/4.jpg')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        filter: 'blur(60px)',
-        mixBlendMode: 'lighten',
-        opacity: 0.3
-      }}></div>
-
-      <div className="absolute inset-0" style={{
-        backgroundImage: `url('/dreams/5.jpg')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        filter: 'blur(60px)',
-        mixBlendMode: 'soft-light',
-        opacity: 0.25
-      }}></div>
-
-      {/* Oil painting texture overlay */}
-      <div className="absolute inset-0 pointer-events-none" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='oil'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='6' seed='2'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='15'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23oil)' fill='white' opacity='0.4'/%3E%3C/svg%3E")`,
-        backgroundSize: '100% 100%',
-        mixBlendMode: 'overlay',
-        opacity: 0.3
-      }}></div>
+    <main className="min-h-screen relative overflow-hidden" style={{
+      backgroundImage: `url('/background.jpg')`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
+    }}>
 
       {/* Soft painted clouds */}
       <div className="absolute inset-0 pointer-events-none">
