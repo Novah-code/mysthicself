@@ -7,7 +7,6 @@ import DreamInput from '@/components/DreamInput';
 import ArchetypeDashboard from '@/components/ArchetypeDashboard';
 import MythologyNarrative from '@/components/MythologyNarrative';
 import ArchetypeEvolution from '@/components/ArchetypeEvolution';
-import ArchetypeDialogue from '@/components/ArchetypeDialogue';
 
 export default function Home() {
   const [dreams, setDreams] = useState<Dream[]>([]);
@@ -195,22 +194,9 @@ export default function Home() {
           </div>
         )}
 
-        {/* Interactive Archetype Dialogue - UNIQUE FEATURE! */}
-        <div className="mb-12">
-          <ArchetypeDialogue dreams={dreams} />
-        </div>
-
         {/* Archetype Dashboard */}
         {dreams.length > 0 && (
           <ArchetypeDashboard dreams={dreams} />
-        )}
-
-        {/* Empty State */}
-        {dreams.length === 0 && !isAnalyzing && (
-          <div className="text-center mt-16 bg-white/60 backdrop-blur-xl border border-white/40 rounded-[2rem] p-12 animate-fade-in">
-            <p className="text-lg text-gray-700 font-light">No dreams recorded yet</p>
-            <p className="mt-2 text-gray-500">Enter your first dream above to discover your archetypes</p>
-          </div>
         )}
       </div>
     </main>
