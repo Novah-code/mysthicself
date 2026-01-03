@@ -115,9 +115,9 @@ export default function Home() {
 
         {/* Guitar - bottom right corner */}
         <div className="absolute" style={{
-          bottom: '5%',
+          bottom: '-3%',
           right: '5%',
-          width: '260px',
+          width: '180px',
           animation: 'float 38s ease-in-out infinite',
           animationDelay: '-15s',
           zIndex: 5
