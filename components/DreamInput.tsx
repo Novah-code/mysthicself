@@ -1,50 +1,14 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 
 interface DreamInputProps {
   onSubmit: (dreamContent: string) => void;
   isAnalyzing: boolean;
 }
 
-const cardThemes = [
-  {
-    bg: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-    accent: '#667eea',
-    border: '#8b9beb'
-  },
-  {
-    bg: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-    accent: '#f093fb',
-    border: '#f3a7fc'
-  },
-  {
-    bg: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
-    accent: '#4facfe',
-    border: '#70bdfe'
-  },
-  {
-    bg: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
-    accent: '#43e97b',
-    border: '#6aec95'
-  },
-  {
-    bg: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
-    accent: '#fa709a',
-    border: '#fb8aae'
-  },
-  {
-    bg: 'linear-gradient(135deg, #30cfd0 0%, #330867 100%)',
-    accent: '#30cfd0',
-    border: '#54d6d7'
-  },
-];
-
 export default function DreamInput({ onSubmit, isAnalyzing }: DreamInputProps) {
   const [dreamContent, setDreamContent] = useState('');
-
-  // Random theme selection (stable for this component instance)
-  const theme = useMemo(() => cardThemes[Math.floor(Math.random() * cardThemes.length)], []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -59,7 +23,7 @@ export default function DreamInput({ onSubmit, isAnalyzing }: DreamInputProps) {
       <div
         className="relative rounded-[2.5rem] p-8 shadow-2xl"
         style={{
-          background: theme.bg,
+          background: 'linear-gradient(135deg, #8BA4D8 0%, #6B7DB8 50%, #7B6BA8 100%)',
           boxShadow: '0 20px 60px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2)',
         }}
       >
