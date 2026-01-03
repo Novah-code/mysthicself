@@ -68,11 +68,11 @@ export default function Home() {
 
       {/* Floating dream objects */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Giraffe - far left edge, much bigger */}
+        {/* Giraffe - far left edge */}
         <div className="absolute" style={{
           top: '10%',
           left: '-8%',
-          width: '500px',
+          width: '300px',
           animation: 'float 35s ease-in-out infinite',
           animationDelay: '0s',
           zIndex: 5
@@ -130,7 +130,7 @@ export default function Home() {
 
         {/* Train - bottom left, more visible */}
         <div className="absolute" style={{
-          bottom: '3%',
+          bottom: '-5%',
           left: '2%',
           width: '320px',
           animation: 'float 34s ease-in-out infinite',
