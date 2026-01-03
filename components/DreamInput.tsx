@@ -23,7 +23,7 @@ export default function DreamInput({ onSubmit, isAnalyzing }: DreamInputProps) {
       <div
         className="relative rounded-[2.5rem] p-8 shadow-2xl"
         style={{
-          background: 'linear-gradient(135deg, #8BA4D8 0%, #6B7DB8 50%, #7B6BA8 100%)',
+          background: '#A8C5E8',
           boxShadow: '0 20px 60px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2)',
         }}
       >
