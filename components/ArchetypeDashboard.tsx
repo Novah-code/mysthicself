@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { Dream, ARCHETYPES } from '@/types/archetypes';
 
 interface ArchetypeDashboardProps {
@@ -7,6 +8,7 @@ interface ArchetypeDashboardProps {
 }
 
 export default function ArchetypeDashboard({ dreams }: ArchetypeDashboardProps) {
+  const [showDreamModal, setShowDreamModal] = useState(false);
   // Calculate average scores across all dreams
   const averageScores = Object.keys(ARCHETYPES).map(key => {
     const archetype = ARCHETYPES[key as keyof typeof ARCHETYPES];
@@ -30,15 +32,24 @@ export default function ArchetypeDashboard({ dreams }: ArchetypeDashboardProps) 
 
   return (
     <div className="space-y-8">
-      {/* Latest Dream Analysis */}
+      {/* Latest Dream */}
       {latestDream && (
         <div className="bg-white rounded-2xl shadow-xl p-8">
           <h2 className="text-2xl font-semibold mb-4 text-gray-800">
-            Latest Dream Analysis
+            Latest Dream
           </h2>
-          <p className="text-gray-600 mb-6 line-clamp-3">
+          <p
+            className="text-gray-600 mb-6 line-clamp-3 cursor-pointer hover:text-gray-800 transition-colors"
+            onClick={() => setShowDreamModal(true)}
+          >
             {latestDream.content}
           </p>
+          <button
+            onClick={() => setShowDreamModal(true)}
+            className="text-sm text-blue-600 hover:text-blue-800 mb-6"
+          >
+            Read full dream →
+          </button>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             {latestDream.archetypeScores
               .sort((a, b) => b.score - a.score)
@@ -103,6 +114,34 @@ export default function ArchetypeDashboard({ dreams }: ArchetypeDashboardProps) 
           ))}
         </div>
       </div>
+
+      {/* Dream Modal */}
+      {showDreamModal && latestDream && (
+        <div
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+          onClick={() => setShowDreamModal(false)}
+        >
+          <div
+            className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-8"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-start mb-4">
+              <h2 className="text-2xl font-semibold text-gray-800">
+                Latest Dream
+              </h2>
+              <button
+                onClick={() => setShowDreamModal(false)}
+                className="text-gray-400 hover:text-gray-600 text-2xl"
+              >
+                ×
+              </button>
+            </div>
+            <p className="text-gray-700 whitespace-pre-wrap leading-relaxed">
+              {latestDream.content}
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
