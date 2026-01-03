@@ -67,6 +67,80 @@ export default function Home() {
       backgroundRepeat: 'no-repeat'
     }}>
 
+      {/* Floating dream objects */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Giraffe - top left */}
+        <div className="absolute" style={{
+          top: '10%',
+          left: '5%',
+          width: '200px',
+          animation: 'float 25s ease-in-out infinite',
+          animationDelay: '0s'
+        }}>
+          <img src="/floating/giraff.png" alt="" className="w-full h-auto opacity-70" style={{
+            filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.2))',
+            animation: 'wobble 4s ease-in-out infinite'
+          }} />
+        </div>
+
+        {/* Woman - top right */}
+        <div className="absolute" style={{
+          top: '15%',
+          right: '8%',
+          width: '180px',
+          animation: 'float 20s ease-in-out infinite',
+          animationDelay: '-5s'
+        }}>
+          <img src="/floating/woman.png" alt="" className="w-full h-auto opacity-65" style={{
+            filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.2))',
+            animation: 'sway-gentle 5s ease-in-out infinite'
+          }} />
+        </div>
+
+        {/* Clock - bottom left */}
+        <div className="absolute" style={{
+          bottom: '20%',
+          left: '12%',
+          width: '150px',
+          animation: 'float 22s ease-in-out infinite',
+          animationDelay: '-10s'
+        }}>
+          <img src="/floating/clock.png" alt="" className="w-full h-auto opacity-75" style={{
+            filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.2))',
+            animation: 'rotate 28s linear infinite'
+          }} />
+        </div>
+
+        {/* Guitar - bottom right */}
+        <div className="absolute" style={{
+          bottom: '15%',
+          right: '15%',
+          width: '190px',
+          animation: 'float 27s ease-in-out infinite',
+          animationDelay: '-15s'
+        }}>
+          <img src="/floating/guitar.png" alt="" className="w-full h-auto opacity-70" style={{
+            filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.2))',
+            animation: 'wobble 3.5s ease-in-out infinite'
+          }} />
+        </div>
+
+        {/* Train - center */}
+        <div className="absolute" style={{
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          width: '220px',
+          animation: 'float 24s ease-in-out infinite',
+          animationDelay: '-8s'
+        }}>
+          <img src="/floating/train.png" alt="" className="w-full h-auto opacity-68" style={{
+            filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.2))',
+            animation: 'sway-gentle 6s ease-in-out infinite'
+          }} />
+        </div>
+      </div>
+
       {/* Soft painted clouds */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-64 h-32 bg-white/20 rounded-full blur-3xl animate-drift"></div>
