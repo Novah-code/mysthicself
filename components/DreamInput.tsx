@@ -21,7 +21,7 @@ export default function DreamInput({ onSubmit, isAnalyzing }: DreamInputProps) {
   return (
     <div className="max-w-2xl mx-auto mb-12 animate-fade-in">
       <div
-        className="relative rounded-[2.5rem] overflow-hidden shadow-2xl"
+        className="relative rounded-full overflow-hidden shadow-2xl aspect-square"
         style={{
           boxShadow: '0 20px 60px rgba(0,0,0,0.4)',
         }}
@@ -31,7 +31,7 @@ export default function DreamInput({ onSubmit, isAnalyzing }: DreamInputProps) {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: 'url(/card.png)',
-            opacity: 0.3,
+            opacity: 0.35,
           }}
         ></div>
 
@@ -39,18 +39,18 @@ export default function DreamInput({ onSubmit, isAnalyzing }: DreamInputProps) {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
 
         {/* Content on top */}
-        <div className="relative z-10 p-12">
+        <div className="relative z-10 h-full flex flex-col items-center justify-center p-16">
           <h2 className="text-3xl font-serif text-white mb-8 text-center drop-shadow-lg">
             Record Your Dream
           </h2>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="w-full space-y-6">
             <textarea
               value={dreamContent}
               onChange={(e) => setDreamContent(e.target.value)}
               placeholder="Describe your dream in detail..."
               className="w-full p-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl focus:border-white/40 focus:outline-none focus:ring-2 focus:ring-white/20 resize-none transition-all text-white placeholder:text-white/60 font-light text-lg leading-relaxed"
-              rows={8}
+              rows={6}
               disabled={isAnalyzing}
             />
 
