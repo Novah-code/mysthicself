@@ -69,33 +69,33 @@ export default function Home() {
 
       {/* Floating dream objects */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Giraffe - far left edge */}
+        {/* Giraffe - far left edge, much bigger */}
         <div className="absolute" style={{
-          top: '15%',
-          left: '-5%',
-          width: '280px',
-          animation: 'float 25s ease-in-out infinite',
+          top: '10%',
+          left: '-8%',
+          width: '500px',
+          animation: 'float 35s ease-in-out infinite',
           animationDelay: '0s',
           zIndex: 5
         }}>
           <img src="/floating/giraff.png" alt="" className="w-full h-auto opacity-70" style={{
             filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.2))',
-            animation: 'wobble 4s ease-in-out infinite'
+            animation: 'wobble 6s ease-in-out infinite'
           }} />
         </div>
 
-        {/* Woman - far right edge */}
+        {/* Woman - moved inward */}
         <div className="absolute" style={{
-          top: '20%',
-          right: '-8%',
+          top: '18%',
+          right: '5%',
           width: '250px',
-          animation: 'float 20s ease-in-out infinite',
+          animation: 'float 30s ease-in-out infinite',
           animationDelay: '-5s',
           zIndex: 5
         }}>
           <img src="/floating/woman.png" alt="" className="w-full h-auto opacity-65" style={{
             filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.2))',
-            animation: 'sway-gentle 5s ease-in-out infinite'
+            animation: 'sway-gentle 7s ease-in-out infinite'
           }} />
         </div>
 
@@ -104,13 +104,13 @@ export default function Home() {
           top: '-5%',
           left: '40%',
           width: '200px',
-          animation: 'float 22s ease-in-out infinite',
+          animation: 'float 32s ease-in-out infinite',
           animationDelay: '-10s',
           zIndex: 5
         }}>
           <img src="/floating/clock.png" alt="" className="w-full h-auto opacity-75" style={{
             filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.2))',
-            animation: 'rotate 28s linear infinite'
+            animation: 'rotate 40s linear infinite'
           }} />
         </div>
 
@@ -119,28 +119,28 @@ export default function Home() {
           bottom: '5%',
           right: '-10%',
           width: '260px',
-          animation: 'float 27s ease-in-out infinite',
+          animation: 'float 38s ease-in-out infinite',
           animationDelay: '-15s',
           zIndex: 5
         }}>
           <img src="/floating/guitar.png" alt="" className="w-full h-auto opacity-70" style={{
             filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.2))',
-            animation: 'wobble 3.5s ease-in-out infinite'
+            animation: 'wobble 5s ease-in-out infinite'
           }} />
         </div>
 
-        {/* Train - bottom left corner */}
+        {/* Train - bottom left, more visible */}
         <div className="absolute" style={{
-          bottom: '8%',
-          left: '-12%',
-          width: '300px',
-          animation: 'float 24s ease-in-out infinite',
+          bottom: '3%',
+          left: '2%',
+          width: '320px',
+          animation: 'float 34s ease-in-out infinite',
           animationDelay: '-8s',
           zIndex: 5
         }}>
           <img src="/floating/train.png" alt="" className="w-full h-auto opacity-68" style={{
             filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.2))',
-            animation: 'sway-gentle 6s ease-in-out infinite'
+            animation: 'sway-gentle 8s ease-in-out infinite'
           }} />
         </div>
       </div>
