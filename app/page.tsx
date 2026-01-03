@@ -69,13 +69,14 @@ export default function Home() {
 
       {/* Floating dream objects */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Giraffe - top left */}
+        {/* Giraffe - far left edge */}
         <div className="absolute" style={{
-          top: '10%',
-          left: '5%',
-          width: '200px',
+          top: '15%',
+          left: '-5%',
+          width: '280px',
           animation: 'float 25s ease-in-out infinite',
-          animationDelay: '0s'
+          animationDelay: '0s',
+          zIndex: 5
         }}>
           <img src="/floating/giraff.png" alt="" className="w-full h-auto opacity-70" style={{
             filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.2))',
@@ -83,13 +84,14 @@ export default function Home() {
           }} />
         </div>
 
-        {/* Woman - top right */}
+        {/* Woman - far right edge */}
         <div className="absolute" style={{
-          top: '15%',
-          right: '8%',
-          width: '180px',
+          top: '20%',
+          right: '-8%',
+          width: '250px',
           animation: 'float 20s ease-in-out infinite',
-          animationDelay: '-5s'
+          animationDelay: '-5s',
+          zIndex: 5
         }}>
           <img src="/floating/woman.png" alt="" className="w-full h-auto opacity-65" style={{
             filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.2))',
@@ -97,13 +99,14 @@ export default function Home() {
           }} />
         </div>
 
-        {/* Clock - bottom left */}
+        {/* Clock - top edge */}
         <div className="absolute" style={{
-          bottom: '20%',
-          left: '12%',
-          width: '150px',
+          top: '-5%',
+          left: '40%',
+          width: '200px',
           animation: 'float 22s ease-in-out infinite',
-          animationDelay: '-10s'
+          animationDelay: '-10s',
+          zIndex: 5
         }}>
           <img src="/floating/clock.png" alt="" className="w-full h-auto opacity-75" style={{
             filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.2))',
@@ -111,13 +114,14 @@ export default function Home() {
           }} />
         </div>
 
-        {/* Guitar - bottom right */}
+        {/* Guitar - bottom right corner */}
         <div className="absolute" style={{
-          bottom: '15%',
-          right: '15%',
-          width: '190px',
+          bottom: '5%',
+          right: '-10%',
+          width: '260px',
           animation: 'float 27s ease-in-out infinite',
-          animationDelay: '-15s'
+          animationDelay: '-15s',
+          zIndex: 5
         }}>
           <img src="/floating/guitar.png" alt="" className="w-full h-auto opacity-70" style={{
             filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.2))',
@@ -125,14 +129,14 @@ export default function Home() {
           }} />
         </div>
 
-        {/* Train - center */}
+        {/* Train - bottom left corner */}
         <div className="absolute" style={{
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: '220px',
+          bottom: '8%',
+          left: '-12%',
+          width: '300px',
           animation: 'float 24s ease-in-out infinite',
-          animationDelay: '-8s'
+          animationDelay: '-8s',
+          zIndex: 5
         }}>
           <img src="/floating/train.png" alt="" className="w-full h-auto opacity-68" style={{
             filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.2))',
