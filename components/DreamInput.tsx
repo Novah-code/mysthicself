@@ -44,7 +44,7 @@ export default function DreamInput({ onSubmit, isAnalyzing }: DreamInputProps) {
             <textarea
               value={dreamContent}
               onChange={(e) => setDreamContent(e.target.value)}
-              placeholder="Record your dream..."
+              placeholder="Paste 5–10 dreams from the past month.&#10;We'll connect them into one mythic narrative."
               className="w-full p-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl focus:border-white/40 focus:outline-none focus:ring-2 focus:ring-white/20 resize-none transition-all text-white placeholder:text-white/60 font-light text-lg leading-relaxed"
               rows={6}
               disabled={isAnalyzing}
