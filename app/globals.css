@@ -256,3 +256,8 @@ body {
 .animate-fly {
   animation: fly 30s linear infinite;
 }
+
+/* 3D perspective for card carousel */
+.perspective-1000 {
+  perspective: 1000px;
+}

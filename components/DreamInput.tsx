@@ -19,12 +19,56 @@ export default function DreamInput({ onSubmit, isAnalyzing }: DreamInputProps) {
   };
 
   return (
-    <div className="max-w-md mx-auto mb-12 animate-fade-in">
+    <div className="relative w-full mb-12 animate-fade-in flex items-center justify-center perspective-1000">
+      {/* Left side card */}
       <div
-        className="relative rounded-[2.5rem] p-8 shadow-2xl"
+        className="absolute left-0 rounded-[2.5rem] p-6 shadow-xl opacity-40"
+        style={{
+          background: '#E8D4A8',
+          width: '280px',
+          transform: 'translateX(-50%) rotateY(25deg) scale(0.85)',
+          transformStyle: 'preserve-3d',
+          zIndex: 1,
+        }}
+      >
+        <div className="bg-black/10 backdrop-blur-sm rounded-[2rem] p-4">
+          <div className="bg-white/10 rounded-[1.5rem] aspect-square mb-3 flex items-center justify-center">
+            <div className="text-white/40 text-4xl">🌙</div>
+          </div>
+          <div className="text-center">
+            <p className="text-white/80 text-sm font-light">Previous Dream</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Right side card */}
+      <div
+        className="absolute right-0 rounded-[2.5rem] p-6 shadow-xl opacity-40"
+        style={{
+          background: '#E8C5D4',
+          width: '280px',
+          transform: 'translateX(50%) rotateY(-25deg) scale(0.85)',
+          transformStyle: 'preserve-3d',
+          zIndex: 1,
+        }}
+      >
+        <div className="bg-black/10 backdrop-blur-sm rounded-[2rem] p-4">
+          <div className="bg-white/10 rounded-[1.5rem] aspect-square mb-3 flex items-center justify-center">
+            <div className="text-white/40 text-4xl">🌟</div>
+          </div>
+          <div className="text-center">
+            <p className="text-white/80 text-sm font-light">Next Dream</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Center main card */}
+      <div
+        className="relative rounded-[2.5rem] p-8 shadow-2xl max-w-md"
         style={{
           background: '#A8C5E8',
           boxShadow: '0 20px 60px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2)',
+          zIndex: 10,
         }}
       >
         {/* Inner card - player interface */}
