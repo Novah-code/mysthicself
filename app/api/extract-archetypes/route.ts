@@ -53,7 +53,7 @@ Respond ONLY with a JSON array in this exact format:
 Make sure to include ALL 5 archetypes (shadow, hero, wise_guide, lover, child) in your response.`;
 
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.0-flash:generateContent?key=${apiKey}`,
       {
         method: 'POST',
         headers: {
