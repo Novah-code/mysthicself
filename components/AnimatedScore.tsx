@@ -16,8 +16,8 @@ export default function AnimatedScore({
   style = {}
 }: AnimatedScoreProps) {
   const [displayValue, setDisplayValue] = useState(0);
-  const frameRef = useRef<number>();
-  const startTimeRef = useRef<number>();
+  const frameRef = useRef<number | undefined>(undefined);
+  const startTimeRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     const animate = (currentTime: number) => {
