@@ -210,25 +210,27 @@ export default function Home() {
         <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-yellow-200 rounded-full blur-3xl animate-blob animation-delay-1000"></div>
       </div>
 
-      {/* Hamburger Menu Button */}
+      {/* Hamburger Menu Button - Glassmorphism */}
       <button
         onClick={() => setMenuOpen(!menuOpen)}
-        className="fixed top-6 right-6 z-50 bg-white/90 backdrop-blur-md p-4 rounded-full shadow-xl hover:shadow-2xl hover:scale-110 transition-all"
+        className="fixed top-6 right-6 z-50 bg-white/20 backdrop-blur-lg border border-white/30 p-4 rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all"
       >
         <div className="space-y-1.5">
-          <div className={`w-6 h-0.5 bg-gray-800 transition-all ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}></div>
-          <div className={`w-6 h-0.5 bg-gray-800 transition-all ${menuOpen ? 'opacity-0' : ''}`}></div>
-          <div className={`w-6 h-0.5 bg-gray-800 transition-all ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}></div>
+          <div className={`w-6 h-0.5 bg-gray-700 transition-all ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}></div>
+          <div className={`w-6 h-0.5 bg-gray-700 transition-all ${menuOpen ? 'opacity-0' : ''}`}></div>
+          <div className={`w-6 h-0.5 bg-gray-700 transition-all ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}></div>
         </div>
       </button>
 
-      {/* Side Menu */}
-      <div className={`fixed top-0 right-0 h-full w-80 bg-white/95 backdrop-blur-xl shadow-2xl z-40 transition-transform duration-300 ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="p-8">
-          <h2 className="text-2xl font-semibold mb-2 text-gray-800">MythicSelf</h2>
-          <p className="text-sm text-gray-600 mb-8">Navigate your journey</p>
+      {/* Side Menu - Glassmorphism with Baby Pink/Blue */}
+      <div className={`fixed top-0 right-0 h-full w-80 bg-white/10 backdrop-blur-2xl border-l border-white/20 shadow-2xl z-40 transition-transform duration-300 ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="p-8 h-full flex flex-col">
+          <div className="mb-8">
+            <h2 className="text-2xl font-semibold mb-2 text-gray-800">MythicSelf</h2>
+            <p className="text-sm text-gray-600">Navigate your journey</p>
+          </div>
 
-          <nav className="space-y-2">
+          <nav className="space-y-3 flex-1">
             {menuItems.map((item) => (
               <button
                 key={item.id}
@@ -239,20 +241,20 @@ export default function Home() {
                   }
                 }}
                 disabled={item.disabled}
-                className={`w-full text-left p-4 rounded-xl transition-all ${
+                className={`w-full text-left p-4 rounded-2xl transition-all border ${
                   currentView === item.id
-                    ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
+                    ? 'bg-pink-100/50 border-pink-200/50 text-pink-900 shadow-md backdrop-blur-sm'
                     : item.disabled
-                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                    : 'bg-gray-100 text-gray-800 hover:bg-gray-200 hover:shadow-md'
+                    ? 'bg-gray-50/30 border-gray-200/30 text-gray-400 cursor-not-allowed backdrop-blur-sm'
+                    : 'bg-white/30 border-white/40 text-gray-700 hover:bg-blue-50/40 hover:border-blue-200/40 hover:shadow-sm backdrop-blur-sm'
                 }`}
               >
                 <div className="flex items-center gap-3">
                   <div className="flex-shrink-0">{getIcon(item.id)}</div>
                   <div>
-                    <div className="font-semibold">{item.label}</div>
+                    <div className="font-semibold text-sm">{item.label}</div>
                     {item.disabled && (
-                      <div className="text-xs opacity-70">
+                      <div className="text-xs opacity-60 mt-0.5">
                         {item.id === 'timeline' ? 'Need 3+ dreams' :
                          item.id === 'mythology' ? 'Need 2+ dreams' :
                          'Record dreams first'}
@@ -265,12 +267,12 @@ export default function Home() {
           </nav>
 
           {dreams.length > 0 && (
-            <div className="mt-8 space-y-4">
-              <div className="p-4 bg-purple-100 rounded-xl">
-                <div className="text-sm text-purple-800 font-semibold mb-1">
+            <div className="mt-auto space-y-3 pt-6 border-t border-white/20">
+              <div className="p-4 bg-pink-50/40 backdrop-blur-sm border border-pink-200/40 rounded-2xl">
+                <div className="text-xs text-pink-800/80 font-medium mb-1">
                   Your Progress
                 </div>
-                <div className="text-2xl font-bold text-purple-900">
+                <div className="text-xl font-bold text-pink-900">
                   {dreams.length} dream{dreams.length !== 1 ? 's' : ''} recorded
                 </div>
               </div>
@@ -284,7 +286,7 @@ export default function Home() {
                     setMenuOpen(false);
                   }
                 }}
-                className="w-full p-3 bg-red-50 hover:bg-red-100 text-red-700 rounded-xl text-sm font-semibold transition-colors"
+                className="w-full p-3 bg-red-50/40 backdrop-blur-sm border border-red-200/40 hover:bg-red-100/50 text-red-700 rounded-2xl text-sm font-semibold transition-all"
               >
                 Clear All Dreams
               </button>

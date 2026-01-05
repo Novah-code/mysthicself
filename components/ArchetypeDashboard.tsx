@@ -35,7 +35,7 @@ export default function ArchetypeDashboard({ dreams }: ArchetypeDashboardProps) 
     <div className="space-y-8">
       {/* Latest Dream */}
       {latestDream && (
-        <div className="bg-white rounded-2xl shadow-xl p-8">
+        <div className="bg-white/40 backdrop-blur-xl border border-white/30 rounded-2xl shadow-xl p-8">
           <h2 className="text-2xl font-semibold mb-4 text-gray-800">
             Latest Dream
           </h2>
@@ -80,7 +80,7 @@ export default function ArchetypeDashboard({ dreams }: ArchetypeDashboardProps) 
       )}
 
       {/* Overall Archetype Scores */}
-      <div className="bg-white rounded-2xl shadow-xl p-8">
+      <div className="bg-white/40 backdrop-blur-xl border border-white/30 rounded-2xl shadow-xl p-8">
         <h2 className="text-2xl font-semibold mb-6 text-gray-800">
           Your Mythological Profile
         </h2>
@@ -117,11 +117,11 @@ export default function ArchetypeDashboard({ dreams }: ArchetypeDashboardProps) 
       {/* Dream Modal */}
       {showDreamModal && latestDream && (
         <div
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 bg-black/50 backdrop-blur-md flex items-center justify-center z-50 p-4"
           onClick={() => setShowDreamModal(false)}
         >
           <div
-            className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-8"
+            className="bg-white/90 backdrop-blur-2xl border border-white/40 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-8"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-start mb-4">

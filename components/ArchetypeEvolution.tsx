@@ -9,7 +9,7 @@ interface ArchetypeEvolutionProps {
 export default function ArchetypeEvolution({ dreams }: ArchetypeEvolutionProps) {
   if (dreams.length < 3) {
     return (
-      <div className="bg-white rounded-2xl shadow-xl p-8 text-center">
+      <div className="bg-white/40 backdrop-blur-xl border border-white/30 rounded-2xl shadow-xl p-8 text-center">
         <div className="text-6xl mb-4">📈</div>
         <h2 className="text-2xl font-semibold mb-2 text-gray-800">
           Archetype Evolution Timeline
@@ -55,7 +55,7 @@ export default function ArchetypeEvolution({ dreams }: ArchetypeEvolutionProps) 
   }).sort((a, b) => b.appearances - a.appearances);
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-8">
+    <div className="bg-white/40 backdrop-blur-xl border border-white/30 rounded-2xl shadow-xl p-8">
       <div className="mb-6">
         <h2 className="text-2xl font-semibold text-gray-800 flex items-center gap-2">
           <span>📈</span>

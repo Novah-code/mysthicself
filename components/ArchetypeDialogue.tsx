@@ -21,7 +21,7 @@ export default function ArchetypeDialogue({ dreams }: ArchetypeDialogueProps) {
 
   if (dreams.length === 0) {
     return (
-      <div className="bg-white rounded-2xl shadow-xl p-8 text-center">
+      <div className="bg-white/40 backdrop-blur-xl border border-white/30 rounded-2xl shadow-xl p-8 text-center">
         <div className="text-6xl mb-4">💬</div>
         <h2 className="text-2xl font-semibold mb-2 text-gray-800">
           Talk to Your Archetypes
@@ -109,7 +109,7 @@ export default function ArchetypeDialogue({ dreams }: ArchetypeDialogueProps) {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-8">
+    <div className="bg-white/40 backdrop-blur-xl border border-white/30 rounded-2xl shadow-xl p-8">
       <div className="mb-6">
         <h2 className="text-2xl font-semibold text-gray-800 flex items-center gap-2">
           <span>💬</span>
