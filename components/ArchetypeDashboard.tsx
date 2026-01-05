@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Dream, ARCHETYPES } from '@/types/archetypes';
+import AnimatedScore from './AnimatedScore';
 
 interface ArchetypeDashboardProps {
   dreams: Dream[];
@@ -65,8 +66,8 @@ export default function ArchetypeDashboard({ dreams }: ArchetypeDashboardProps) 
                   >
                     <div className="text-3xl mb-2">{archetype.emoji}</div>
                     <h3 className="font-semibold text-sm mb-1">{archetype.name}</h3>
-                    <div className="text-2xl font-bold mb-2" style={{ color: archetype.color }}>
-                      {score}%
+                    <div className="text-2xl font-bold mb-2">
+                      <AnimatedScore value={score} className="" style={{ color: archetype.color }} />
                     </div>
                     {reasoning && (
                       <p className="text-xs text-gray-500 line-clamp-2">{reasoning}</p>
@@ -97,13 +98,11 @@ export default function ArchetypeDashboard({ dreams }: ArchetypeDashboardProps) 
                     <p className="text-xs text-gray-500">{archetype.description}</p>
                   </div>
                 </div>
-                <span className="text-xl font-bold" style={{ color: archetype.color }}>
-                  {score}%
-                </span>
+                <AnimatedScore value={score} className="text-xl font-bold" style={{ color: archetype.color }} />
               </div>
               <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
                 <div
-                  className="h-full rounded-full transition-all duration-1000"
+                  className="h-full rounded-full transition-all duration-1500 ease-out"
                   style={{
                     width: `${score}%`,
                     backgroundColor: archetype.color

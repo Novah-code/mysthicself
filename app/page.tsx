@@ -265,13 +265,29 @@ export default function Home() {
           </nav>
 
           {dreams.length > 0 && (
-            <div className="mt-8 p-4 bg-purple-100 rounded-xl">
-              <div className="text-sm text-purple-800 font-semibold mb-1">
-                Your Progress
+            <div className="mt-8 space-y-4">
+              <div className="p-4 bg-purple-100 rounded-xl">
+                <div className="text-sm text-purple-800 font-semibold mb-1">
+                  Your Progress
+                </div>
+                <div className="text-2xl font-bold text-purple-900">
+                  {dreams.length} dream{dreams.length !== 1 ? 's' : ''} recorded
+                </div>
               </div>
-              <div className="text-2xl font-bold text-purple-900">
-                {dreams.length} dream{dreams.length !== 1 ? 's' : ''} recorded
-              </div>
+
+              <button
+                onClick={() => {
+                  if (confirm('Are you sure you want to delete all dreams? This cannot be undone.')) {
+                    dreamStorage.clear();
+                    setDreams([]);
+                    setCurrentView('home');
+                    setMenuOpen(false);
+                  }
+                }}
+                className="w-full p-3 bg-red-50 hover:bg-red-100 text-red-700 rounded-xl text-sm font-semibold transition-colors"
+              >
+                Clear All Dreams
+              </button>
             </div>
           )}
         </div>
