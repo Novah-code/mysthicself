@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Dream, ARCHETYPES, Archetype } from '@/types/archetypes';
 
 interface ArchetypeDialogueProps {
@@ -13,11 +13,40 @@ interface Message {
   archetypeId?: string;
 }
 
+const STORAGE_KEY_PREFIX = 'dialogue-';
+
 export default function ArchetypeDialogue({ dreams }: ArchetypeDialogueProps) {
   const [selectedArchetype, setSelectedArchetype] = useState<Archetype | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
   const [userInput, setUserInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Auto-scroll to bottom when messages change
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages, isLoading]);
+
+  // Load conversation from localStorage when archetype is selected
+  useEffect(() => {
+    if (selectedArchetype) {
+      const saved = localStorage.getItem(STORAGE_KEY_PREFIX + selectedArchetype.id);
+      if (saved) {
+        try {
+          setMessages(JSON.parse(saved));
+        } catch (error) {
+          console.error('Error loading conversation:', error);
+        }
+      }
+    }
+  }, [selectedArchetype]);
+
+  // Save conversation to localStorage whenever messages change
+  useEffect(() => {
+    if (selectedArchetype && messages.length > 0) {
+      localStorage.setItem(STORAGE_KEY_PREFIX + selectedArchetype.id, JSON.stringify(messages));
+    }
+  }, [messages, selectedArchetype]);
 
   if (dreams.length === 0) {
     return (
@@ -232,6 +261,9 @@ export default function ArchetypeDialogue({ dreams }: ArchetypeDialogueProps) {
                 </div>
               </div>
             )}
+
+            {/* Scroll anchor */}
+            <div ref={messagesEndRef} />
           </div>
 
           {/* Input */}
@@ -240,7 +272,7 @@ export default function ArchetypeDialogue({ dreams }: ArchetypeDialogueProps) {
               type="text"
               value={userInput}
               onChange={(e) => setUserInput(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
+              onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey && sendMessage()}
               placeholder={`Ask ${selectedArchetype.name} a question...`}
               className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-xl focus:outline-none focus:border-purple-500"
               disabled={isLoading}

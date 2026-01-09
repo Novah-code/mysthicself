@@ -8,8 +8,9 @@ import ArchetypeDashboard from '@/components/ArchetypeDashboard';
 import MythologyNarrative from '@/components/MythologyNarrative';
 import ArchetypeEvolution from '@/components/ArchetypeEvolution';
 import ArchetypeDialogue from '@/components/ArchetypeDialogue';
+import About from '@/components/About';
 
-type View = 'home' | 'dashboard' | 'timeline' | 'mythology' | 'dialogue';
+type View = 'home' | 'dashboard' | 'timeline' | 'mythology' | 'dialogue' | 'about';
 
 export default function Home() {
   const [dreams, setDreams] = useState<Dream[]>([]);
@@ -72,6 +73,7 @@ export default function Home() {
     { id: 'timeline' as View, label: 'Timeline', disabled: dreams.length < 3 },
     { id: 'mythology' as View, label: 'My Mythology', disabled: dreams.length < 2 },
     { id: 'dialogue' as View, label: 'Dialogue', disabled: dreams.length === 0 },
+    { id: 'about' as View, label: 'About', disabled: false },
   ];
 
   const getIcon = (id: View) => {
@@ -104,6 +106,12 @@ export default function Home() {
         return (
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+          </svg>
+        );
+      case 'about':
+        return (
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         );
     }
@@ -342,6 +350,21 @@ export default function Home() {
             <ArchetypeDialogue dreams={dreams} />
           </div>
         )}
+
+        {currentView === 'about' && (
+          <div className="animate-fade-in">
+            <About />
+          </div>
+        )}
+
+        {/* Footer */}
+        <footer className="mt-16 text-center pb-8">
+          <p className="text-white/80 text-sm" style={{
+            textShadow: '0 2px 4px rgba(0,0,0,0.3)',
+          }}>
+            © 2026 MythicSelf. Created for the Gemini 3 Global Hackathon.
+          </p>
+        </footer>
       </div>
     </main>
   );
